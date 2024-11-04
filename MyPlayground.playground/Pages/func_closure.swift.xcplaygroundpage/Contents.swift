@@ -55,3 +55,20 @@ func performaction(action:()->Void){
 performaction {
     print("hello shashwat action is performed")
 }
+//capturing the value
+
+func increamenter (n:Int) -> ( ) -> Int {
+    var total = 0;
+    return{
+        total+=n;
+        return total
+    }
+}
+let incrementerby2 = increamenter(n: 2)
+
+print(incrementerby2())
+
+print(incrementerby2())
+
+print(incrementerby2())
+

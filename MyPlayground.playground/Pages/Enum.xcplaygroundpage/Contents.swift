@@ -89,4 +89,18 @@ let https = httpMethod.allMethods()
 let httpsmeth = https.count
 print(httpsmeth)
     //enum with compuated property
-
+enum Weather{
+    case sunny(Double)
+    case rainy(Double)
+    
+    var isniceWeather:Bool{
+        switch self{
+        case.rainy(let rain):
+            return rain<10
+        case .sunny(let temp):
+            return temp>10
+        }
+    }
+}
+let weatherstatus = Weather.rainy(2)
+print(weatherstatus.isniceWeather)

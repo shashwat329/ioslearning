@@ -44,3 +44,4 @@ struct ProductViewModel : Identifiable{
         product.category
     }
 }
+    //this is enough

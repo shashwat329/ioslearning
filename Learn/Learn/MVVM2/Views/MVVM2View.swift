@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct MVVM2View: View {
-    @State private var products: [Product2] = []
-    let webservice = webService2()
+    @StateObject private var vm:ProductListVm = ProductListVm();
     func fetchProducts()async{
         do{
             products = try await webservice.getData()

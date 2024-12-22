@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ProductlistVm: ObservableObject {
+class ProductlistVm: ObservableObject{
     @Published var products: [ProductViewModel2] = []
     
     let webservice: webService2
@@ -27,7 +27,7 @@ class ProductlistVm: ObservableObject {
     
     
 }
-struct ProductViewModel2{
+struct ProductViewModel2: Identifiable{
     private var product: Product2
     init(product: Product2) {
         self.product = product

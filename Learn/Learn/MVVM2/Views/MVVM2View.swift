@@ -8,23 +8,14 @@
 import SwiftUI
 
 struct MVVM2View: View {
-    @StateObject private var vm:ProductListVm = ProductListVm();
-    func fetchProducts()async{
-        do{
-            products = try await webservice.getData()
-        }
-        catch{
-            print("there is an error")
-        }
-         
-    }
+    @StateObject private var vm = ProductlistVm(webservice: webService2());
     var body: some View {
         VStack{
-            List(products){ product in
+            List(vm.products){ product in
                 Text(product.title)
             }
             .task{
-                await fetchProducts()
+                await vm.populateproducts()
             }
         }
     }

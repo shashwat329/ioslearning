@@ -1,13 +1,13 @@
 //
-//  product.swift
+//  Product.swift
 //  Learn
 //
-//  Created by shashwat singh on 17/12/24.
+//  Created by shashwat singh on 23/12/24.
 //
 
 import Foundation
 
-struct Product2: Decodable,Identifiable{
+struct Product3: Decodable, Identifiable{
     let id: Int
     let title: String
     let description: String

@@ -7,12 +7,23 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct OrderCellView: View{
+    let order: CoffeeOrder
+    var body: some View{
+        HStack{
+            VStack(alignment: .leading){
+                Text(order.name).accessibilityIdentifier("order name")
+                    .bold()
+                Text("\(order.coffeeName)(\(order.size.rawValue))").accessibilityIdentifier("coffee details")
+                    .opacity(0.5)
+            }
+            Spacer()
+            Text(order.total as NSNumber,formatter: NumberFormatter.currency).accessibilityIdentifier("order total amount")
+        }
     }
 }
 
-#Preview {
-    SwiftUIView()
-}
+
+//#Preview {
+//    OrderCellView(order: CoffeeOrder)
+//}

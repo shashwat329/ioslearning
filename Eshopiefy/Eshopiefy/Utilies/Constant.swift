@@ -6,9 +6,5 @@
 //
 
 import Foundation
-enum Endpoint: String {
-    case products = "/products"
-    case categories = "/categories"
-}
-let baseURL: String = "https://fakestoreapi.com"
 
+ let baseURL: String = "https://fakestoreapi.com"
